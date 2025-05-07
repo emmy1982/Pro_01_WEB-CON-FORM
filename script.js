@@ -353,4 +353,80 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.classList.remove('no-scroll');
         }
     });
+
+    // Animación del hero (logo, botón, fondo)
+    gsap.from(".hero-content img", {
+        opacity: 0,
+        y: 60,
+        scale: 1.1,
+        duration: 1.2,
+        ease: "power3.out"
+    });
+    gsap.from(".reserva-cita", {
+        opacity: 0,
+        y: 40,
+        delay: 0.7,
+        duration: 1,
+        ease: "power3.out"
+    });
+
+    // Fade-in de títulos de sección al hacer scroll
+    gsap.utils.toArray('.section-title').forEach(title => {
+        gsap.from(title, {
+            scrollTrigger: {
+                trigger: title,
+                start: "top 80%",
+                toggleActions: "play none none none"
+            },
+            opacity: 0,
+            y: 40,
+            duration: 1,
+            ease: "power2.out"
+        });
+    });
+
+    // Galería: animar imágenes al entrar en viewport
+    gsap.utils.toArray('.gallery-item').forEach(item => {
+        gsap.from(item, {
+            scrollTrigger: {
+                trigger: item,
+                start: "top 90%",
+                toggleActions: "play none none none"
+            },
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+            duration: 0.8,
+            ease: "power2.out"
+        });
+    });
+
+    // Equipo: animar miembros uno a uno
+    gsap.utils.toArray('.team-member').forEach((member, i) => {
+        gsap.from(member, {
+            scrollTrigger: {
+                trigger: member,
+                start: "top 85%",
+                toggleActions: "play none none none"
+            },
+            opacity: 0,
+            x: i % 2 === 0 ? -60 : 60,
+            duration: 1,
+            ease: "power2.out"
+        });
+    });
+
+    // Footer: iconos sociales
+    gsap.from('.footer-social a', {
+        opacity: 0,
+        y: 30,
+        stagger: 0.15,
+        duration: 0.7,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+            trigger: ".footer-social",
+            start: "top 95%",
+            toggleActions: "play none none none"
+        }
+    });
 }); 
