@@ -670,6 +670,7 @@ nav {
     align-items: center;
     text-align: center;
     overflow: hidden;
+    padding: 80px 0;
 }
 
 .hero::before {
@@ -705,15 +706,16 @@ nav {
     align-items: center;
     justify-content: center;
     min-height: 100%;
+    gap: 2rem;
 }
 
 .hero-content img {
     width: clamp(280px, 45%, 600px);
     height: auto;
-    margin-bottom: clamp(1rem, 3vh, 2rem);
+    margin-bottom: 1rem;
     filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
-    animation: pulse 3s ease-in-out infinite;
     transition: transform 0.5s ease;
+    animation: pulse 8s ease-in-out infinite;
     max-width: 100%;
 }
 
@@ -893,17 +895,16 @@ nav {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
-    /* letter-spacing: 2px; */
     transition: all 0.4s ease;
     display: inline-flex;
     align-items: center;
     gap: 12px;
     background-color: rgba(0, 0, 0, 0.2);
     padding: 15px 30px;
-    /* border: 2px solid var(--primary-color); */
     position: relative;
     overflow: hidden;
     z-index: 1;
+    margin-top: 1rem;
 }
 
 .reserva-cita::before {
@@ -937,6 +938,8 @@ nav {
     transform: translateX(5px);
     animation: bounceArrow 0.8s ease infinite;
 }
+
+
 
 @keyframes bounceArrow {
 

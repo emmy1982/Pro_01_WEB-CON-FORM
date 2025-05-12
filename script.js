@@ -357,16 +357,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Animación del hero (logo, botón, fondo)
     gsap.from(".hero-content img", {
         opacity: 0,
-        y: 60,
-        scale: 1.1,
+        y: 30,
         duration: 1.2,
-        ease: "power3.out"
-    });
-    gsap.from(".reserva-cita", {
-        opacity: 0,
-        y: 40,
-        delay: 0.7,
-        duration: 1,
         ease: "power3.out"
     });
 
